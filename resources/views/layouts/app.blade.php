@@ -19,7 +19,7 @@
 
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="{{url('')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="{{ asset('images/logos/logo.png') }}" class="h-20" alt="Flowbite Logo">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ٌPawon</span>
             </a>
@@ -48,22 +48,15 @@
                     </li>
                     <li>
                         <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">List Kitchen</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    {{ $slot }}
+    <div class="min-h-screen grid content-center">
+        {{ $slot }}
+    </div>
     <footer class="bg-white shadow dark:bg-gray-800">
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#" class="hover:underline">Pawon</a>. All Rights Reserved.
