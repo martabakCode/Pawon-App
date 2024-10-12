@@ -1,5 +1,5 @@
 <div class="flex flex-wrap gap-4">
-    @foreach($kitchens as $kitchen)
+    {{-- @foreach($kitchens as $kitchen)
     <div
     class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
@@ -28,5 +28,5 @@
         </a>
     </div>
 </div>
-    @endforeach
+    @endforeach --}}
 </div>

@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
+            $table->string("photos");
             $table->string("name");
-            $table->string("number");
+            $table->string("street");
+            $table->string("phone");
             $table->string("latitude")->nullable();
             $table->string("longitude")->nullable();
+            $table->foreignId('city_id')->constrained('cities')->cascadeOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

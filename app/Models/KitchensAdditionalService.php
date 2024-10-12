@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KitchenPhoto extends Model
+class KitchensAdditionalService extends Model
 {
     use HasFactory;
+
+
 }

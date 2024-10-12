@@ -1,5 +1,5 @@
 <form wire:submit.prevent="submit" class="space-y-4 bg-gray-50 dark:bg-gray-800 px-8 py-4 rounded">
-    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white d-block ">Reserve a room</span>
+    {{-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white d-block ">Reserve a room</span>
     <label for="" class="text-slate-400 mb-8  block">
        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempore qui nisi itaque​</label>
     <div class="mt-2">
@@ -40,5 +40,5 @@
         <div class="text-center text-green-500">
             {{ session('success') }}
         </div>
-    @endif
+    @endif --}}
 </form>

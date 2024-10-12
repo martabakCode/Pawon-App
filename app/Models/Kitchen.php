@@ -23,6 +23,14 @@ class Kitchen extends Model
        return $this->belongsToMany(AdditionalService::class,'kitchens_additional_services')->withTimestamps();
     }
 
+    public function kitchen_additional_services()
+    {
+       return $this->hasMany(KitchensAdditionalService::class);
+    }
+
+
+
+
     public function reservations():HasMany
     {
         return $this->hasMany(Reservation::class);

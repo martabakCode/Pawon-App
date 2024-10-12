@@ -13,4 +13,7 @@ class Building extends Model
     public function kitchens() : HasMany {
         return $this->hasMany(Kitchen::class);
     }
+    public function city() {
+        return $this->belongsTo(City::class);
+    }
 }

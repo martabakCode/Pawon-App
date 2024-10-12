@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             RolesPermissionsSeeder::class,
+            StatusSeeder::class,
+            CitySeeder::class,
         ]);
     }
 }

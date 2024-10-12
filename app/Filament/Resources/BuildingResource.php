@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BuildingResource\Pages;
 use App\Filament\Resources\BuildingResource\RelationManagers;
 use App\Models\Building;
+use App\Models\City;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,19 +24,39 @@ class BuildingResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-                Forms\Components\TextInput::make('number')
-                ->numeric()
-                ->required()
-                ->maxLength(255),
-                Forms\Components\TextInput::make('longitude')
-                ->numeric()
-                ->maxLength(255),
-                Forms\Components\TextInput::make('latitude')
-                ->numeric(),
-             
+            Forms\Components\Section::make('Create Building')
+            ->description('Create building for the renting system')
+                ->schema([
+                    Forms\Components\FileUpload::make('photos')
+                    ->columnSpan(2)
+                    ->required()
+                    ->image()
+                    ->imageEditor()
+                    ->imageEditorAspectRatios([
+                        '16:9',
+                    ]),
+                    Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                    Forms\Components\TextInput::make('street')
+                    ->required()
+                    ->maxLength(255),
+                    Forms\Components\TextInput::make('phone')
+                    ->required()
+                    ->maxLength(255),
+                    Forms\Components\TextInput::make('longitude')
+                    ->numeric()
+                    ->maxLength(255),
+                    Forms\Components\TextInput::make('latitude')
+                    ->numeric(),
+                    Forms\Components\Select::make('city_id')
+                    ->options(function (){
+                        return City::get()->pluck('name','id');
+                    })
+                    ->label('City')
+                    ->required(),
+
+                ])->columns(2)
             ]);
     }
 
@@ -43,13 +64,21 @@ class BuildingResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('photos')
+                ->label('Photos'),
                 Tables\Columns\TextColumn::make('name')
                 ->searchable()
                 ->sortable(),
-                Tables\Columns\TextColumn::make('number')
-                ->searchable(),
-                Tables\Columns\TextColumn::make('longitude'),
-                Tables\Columns\TextColumn::make('latitude'),
+                Tables\Columns\TextColumn::make('street')
+                ->searchable()
+                ->sortable(),
+                Tables\Columns\SelectColumn::make('city_id')
+                ->options(function (){
+                    return City::get()->pluck('name','id');
+                })
+                ->label('City')
+                ->searchable()
+                ->sortable(),
             ])
             ->filters([
                 //
