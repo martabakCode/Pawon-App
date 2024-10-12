@@ -1,4 +1,4 @@
-<form wire:submit.prevent="submit" class="space-y-4 bg-gray-50 px-8 py-4 rounded">
+<form wire:submit.prevent="submit" class="space-y-4 bg-gray-50 dark:bg-gray-800 px-8 py-4 rounded">
     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white d-block ">Reserve a room</span>
     <label for="" class="text-slate-400 mb-8  block">
        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempore qui nisi itaque​</label>

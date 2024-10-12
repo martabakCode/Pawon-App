@@ -3,14 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Room;
+use App\Models\Kitchen;
 
 class ShowRooms extends Component
 {
-    public $rooms;
+    public $kitchens;
     public function mount()
     {
-        $this->rooms = Room::all(); // Fetch all rooms
+        $this->kitchens = Kitchen::all(); // Fetch all rooms
     }
 
     public function render()

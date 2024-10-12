@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\AdditionalService;
-use App\Models\Room;
+use App\Models\Kitchen;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
