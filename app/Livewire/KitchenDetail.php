@@ -12,7 +12,7 @@ class KitchenDetail extends Component
     public function mount($id)
     {
         // Fetch the kitchen data by ID when component is mounted
-        $this->kitchen = Kitchen::findOrFail($id);
+        $this->kitchen = Kitchen::findOrFail($id)->with('building.city','additional_services')->first();
     }
 
     public function render()
