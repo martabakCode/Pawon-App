@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Livewire\KitchenDetail;
+use App\Livewire\ShowKitchens;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', ShowKitchens::class);
+
+Route::get('/kitchen/{id}', KitchenDetail::class)->name('kitchen.show');
